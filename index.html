@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#05060b">
+  <meta name="description" content="ANI AI — Your AI. Your Space.">
+  <title>ANI AI — Your AI. Your Space.</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="bootScreen" class="boot-screen" aria-hidden="true">
+    <div class="boot-orb"></div>
+    <div class="boot-brand">ANI AI</div>
+    <div class="boot-tagline">Your AI. Your Space.</div>
+    <div class="boot-bar"><span></span></div>
+  </div>
+
+  <div class="ambient" aria-hidden="true">
+    <span class="orb orb-a"></span><span class="orb orb-b"></span><span class="orb orb-c"></span>
+    <div class="grid"></div>
+    <div id="particles"></div>
+  </div>
+
+  <div id="app" class="app">
+    <aside id="sidebar" class="sidebar">
+      <div class="sidebar-head">
+        <button class="brand-btn" id="brandBtn" title="New chat">
+          <span class="brand-mark">A</span>
+          <span><strong>ANI AI</strong><small>Your AI. Your Space.</small></span>
+        </button>
+        <button class="icon-btn mobile-only" id="closeSidebar" title="Close menu">×</button>
+      </div>
+
+      <button class="new-chat-btn" id="newChatBtn">
+        <span>＋</span> New Chat
+      </button>
+
+      <div class="sidebar-label">RECENT CHATS</div>
+      <div id="chatList" class="chat-list"></div>
+
+      <div class="sidebar-bottom">
+        <button class="nav-btn" data-panel="history"><span>◴</span> Chat History</button>
+        <button class="nav-btn" data-panel="settings"><span>⚙</span> Settings</button>
+        <button class="nav-btn" data-panel="about"><span>✦</span> About ANI AI</button>
+      </div>
+    </aside>
+
+    <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn mobile-only" id="menuBtn" title="Open menu">☰</button>
+          <div>
+            <div class="eyebrow">FUTURE CONVERSATION</div>
+            <h1 id="topTitle">ANI AI</h1>
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="top-btn" data-panel="settings">⚙ <span>Settings</span></button>
+          <button class="top-btn" data-panel="about">✦ <span>About</span></button>
+        </div>
+      </header>
+
+      <section id="chatView" class="chat-view">
+        <div id="welcome" class="welcome">
+          <div class="welcome-icon">A<span></span></div>
+          <div class="welcome-kicker">ANI AI</div>
+          <h2>What can I help you create?</h2>
+          <p>Ask anything. Build ideas. Write code. Explore possibilities.</p>
+          <div class="suggestions">
+            <button data-prompt="Give me 5 creative project ideas I can build with HTML, CSS and JavaScript.">✦ Creative ideas</button>
+            <button data-prompt="Explain a difficult topic to me in a simple beginner-friendly way.">◈ Explain something</button>
+            <button data-prompt="Help me write a polished professional message.">✎ Write for me</button>
+            <button data-prompt="Help me debug this code step by step.">⌘ Debug code</button>
+          </div>
+        </div>
+        <div id="messages" class="messages"></div>
+        <div id="scrollBottom" class="scroll-bottom">↓</div>
+      </section>
+
+      <section class="composer-wrap">
+        <div id="stopBar" class="stop-bar hidden">
+          <button id="stopBtn">■ Stop generating</button>
+        </div>
+        <form id="composer" class="composer">
+          <button type="button" class="composer-icon" id="attachBtn" title="Attach a text file">＋</button>
+          <input type="file" id="fileInput" hidden accept=".txt,.md,.json,.csv,.js,.html,.css,.py,.xml">
+          <textarea id="messageInput" rows="1" placeholder="Ask ANI AI anything..." autocomplete="off"></textarea>
+          <button type="button" class="composer-icon mic-btn" id="micBtn" title="Voice input">⌕</button>
+          <button type="submit" class="send-btn" id="sendBtn" title="Send">➤</button>
+        </form>
+        <div class="composer-note">ANI AI can make mistakes. Verify important information.</div>
+      </section>
+    </main>
+  </div>
+
+  <div id="panelLayer" class="panel-layer hidden">
+    <div class="panel-backdrop" data-close-panel></div>
+    <section id="settingsPanel" class="modal panel hidden" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <div class="modal-head">
+        <div><div class="eyebrow">CONFIGURATION</div><h2 id="settingsTitle">Settings</h2></div>
+        <button class="icon-btn" data-close-panel>×</button>
+      </div>
+      <div class="modal-body">
+        <div class="setting-card">
+          <div class="setting-title">AI provider</div>
+          <p class="muted">ANI AI uses a standard OpenAI-compatible chat-completions API. Your key stays in this browser's localStorage and is never bundled into the site source.</p>
+          <label>API endpoint<input id="apiEndpoint" type="url" placeholder="https://.../v1/chat/completions"></label>
+          <label>API key<input id="apiKey" type="password" placeholder="Paste your API key"></label>
+          <label>Model<input id="modelName" type="text" placeholder="Your provider's model name"></label>
+          <button class="primary-btn" id="testApiBtn">Test connection</button>
+          <div id="apiStatus" class="status"></div>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-title">Appearance</div>
+          <label class="switch-row"><span>Dark mode</span><input id="darkMode" type="checkbox" checked><i></i></label>
+          <label class="switch-row"><span>Smooth animations</span><input id="animations" type="checkbox" checked><i></i></label>
+        </div>
+
+        <div class="setting-card">
+          <div class="setting-title">Your data</div>
+          <div class="button-grid">
+            <button class="secondary-btn" id="exportBtn">Export chats</button>
+            <button class="secondary-btn" id="importBtn">Import chats</button>
+            <button class="danger-btn" id="clearAllBtn">Clear all chats</button>
+          </div>
+          <input type="file" id="importFile" hidden accept=".json">
+        </div>
+      </div>
+    </section>
+
+    <section id="historyPanel" class="modal panel hidden" role="dialog" aria-modal="true" aria-labelledby="historyTitle">
+      <div class="modal-head">
+        <div><div class="eyebrow">YOUR SPACE</div><h2 id="historyTitle">Chat History</h2></div>
+        <button class="icon-btn" data-close-panel>×</button>
+      </div>
+      <div id="historyBody" class="modal-body"></div>
+    </section>
+
+    <section id="aboutPanel" class="modal panel hidden" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+      <div class="modal-head">
+        <div><div class="eyebrow">IDENTITY</div><h2 id="aboutTitle">About ANI AI</h2></div>
+        <button class="icon-btn" data-close-panel>×</button>
+      </div>
+      <div class="modal-body about">
+        <div class="about-logo">ANI AI</div>
+        <h3>Your AI. Your Space.</h3>
+        <p>ANI AI is a lightweight futuristic chat interface designed to run directly on static hosting such as GitHub Pages.</p>
+        <div class="dev-card">
+          <span class="dev-avatar">A</span>
+          <div><small>DEVELOPER</small><strong>Aniruddha</strong></div>
+        </div>
+        <p class="muted">No server is required by the interface itself. To get real AI responses, configure a compatible API endpoint and your own API key in Settings.</p>
+      </div>
+    </section>
+  </div>
+
+  <div id="contextMenu" class="context-menu hidden"></div>
+  <div id="toast" class="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
