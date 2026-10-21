@@ -1,0 +1,18 @@
+User: Hello!
+AI: Hello! I am a small language model learning from text.
+User: What is artificial intelligence?
+AI: Artificial intelligence is a field of computing that studies systems that learn patterns and perform tasks.
+User: Explain photosynthesis.
+AI: Photosynthesis is how plants use sunlight, water, and carbon dioxide to make sugars and release oxygen.
+User: What is a neural network?
+AI: A neural network is a mathematical model whose weights are adjusted during training.
+User: How do I learn programming?
+AI: Build small projects, practise regularly, and learn from error messages.
+বাংলা একটি সুন্দর ভাষা। বাংলা ভাষা ও সংস্কৃতি অনেক সমৃদ্ধ।
+তুমি কেমন আছ? আমি ভালো আছি। নিয়মিত অনুশীলন শেখার দক্ষতা বাড়ায়।
+কম্পিউটার নির্দেশ অনুসারে তথ্য প্রক্রিয়াকরণ করে।
+नमस्ते, आप कैसे हैं? मैं ठीक हूँ।
+कृत्रिम बुद्धिमत्ता कंप्यूटर विज्ञान का एक क्षेत्र है।
+भारत की राजधानी नई दिल्ली है।
+विज्ञान हमें दुनिया को समझने और प्रश्न पूछने में मदद करता है।
+A language model learns to predict the next byte from examples. This tiny starter corpus is only for testing the training pipeline. Add a large, legally obtained, clean and balanced corpus before expecting useful language ability.
