@@ -1,18 +1,43 @@
-User: Hello!
-AI: Hello! I am a small language model learning from text.
-User: What is artificial intelligence?
-AI: Artificial intelligence is a field of computing that studies systems that learn patterns and perform tasks.
-User: Explain photosynthesis.
-AI: Photosynthesis is how plants use sunlight, water, and carbon dioxide to make sugars and release oxygen.
-User: What is a neural network?
-AI: A neural network is a mathematical model whose weights are adjusted during training.
-User: How do I learn programming?
-AI: Build small projects, practise regularly, and learn from error messages.
-বাংলা একটি সুন্দর ভাষা। বাংলা ভাষা ও সংস্কৃতি অনেক সমৃদ্ধ।
-তুমি কেমন আছ? আমি ভালো আছি। নিয়মিত অনুশীলন শেখার দক্ষতা বাড়ায়।
-কম্পিউটার নির্দেশ অনুসারে তথ্য প্রক্রিয়াকরণ করে।
-नमस्ते, आप कैसे हैं? मैं ठीक हूँ।
-कृत्रिम बुद्धिमत्ता कंप्यूटर विज्ञान का एक क्षेत्र है।
-भारत की राजधानी नई दिल्ली है।
-विज्ञान हमें दुनिया को समझने और प्रश्न पूछने में मदद करता है।
-A language model learns to predict the next byte from examples. This tiny starter corpus is only for testing the training pipeline. Add a large, legally obtained, clean and balanced corpus before expecting useful language ability.
+ANI Scratch AI is a small language model created for learning.
+This model begins with randomly initialized parameters. It learns by predicting the next byte in text.
+A language model learns patterns from examples. It does not understand the world like a person.
+The goal is to build, train, inspect, and improve our own small Transformer on a Windows computer.
+We can improve the model by adding clean, varied text that we have permission to use.
+English examples:
+Hello! My name is ANI.
+I am a small experimental language model.
+I can learn patterns from English, Bengali, and Hindi text.
+Agartala is the capital of Tripura, a state in northeast India.
+Tripura has a rich mix of languages, music, food, festivals, and traditions.
+Durga Puja is celebrated with pandals, lights, art, music, and community gatherings.
+A good question is clear and specific.
+A computer program follows instructions written by people.
+Python is a programming language used for machine learning and data science.
+A neural network learns by adjusting numerical weights to reduce prediction error.
+A Transformer uses attention to process relationships between tokens.
+Training data should be accurate, diverse, and legally usable.
+A small model may produce repetitive or incorrect sentences. Check important facts.
+Bengali examples:
+নমস্কার! আমার নাম আনি।
+আমি একটি ছোট পরীক্ষামূলক ভাষার মডেল।
+আমি বাংলা, ইংরেজি এবং হিন্দি লেখার ধরন শিখতে পারি।
+আগরতলা ত্রিপুরার রাজধানী। ত্রিপুরা ভারতের উত্তর-পূর্ব অঞ্চলে অবস্থিত।
+দুর্গাপূজা অনেক মানুষের কাছে আনন্দ, শিল্প, সংস্কৃতি এবং পরিবারের মিলনের উৎসব।
+ভালো প্রশ্ন স্পষ্ট এবং নির্দিষ্ট হয়।
+কম্পিউটার মানুষের দেওয়া নির্দেশ অনুসরণ করে।
+একটি নিউরাল নেটওয়ার্ক উদাহরণ থেকে ভাষার কিছু ধরন শিখতে পারে।
+এই ছোট মডেলটি শেখার জন্য তৈরি করা হয়েছে। এটি সব প্রশ্নের সঠিক উত্তর দিতে পারে না।
+হিন্দी उदाहरण:
+नमस्ते! मेरा नाम एनी है।
+मैं सीखने के लिए बनाया गया एक छोटा भाषा मॉडल हूँ।
+मैं अंग्रेज़ी, বাংলা और हिन्दी के पाठ से भाषा के पैटर्न सीख सकता हूँ।
+अगरतला त्रिपुरा की राजधानी है। त्रिपुरा भारत के उत्तर-पूर्व में स्थित है।
+दुर्गा पूजा कला, संगीत, संस्कृति और परिवार के साथ समय बिताने का त्योहार है।
+एक अच्छा सवाल स्पष्ट और खास होता है।
+कंप्यूटर लोगों द्वारा दिए गए निर्देशों का पालन करता है।
+एक न्यूरल नेटवर्क उदाहरणों से भाषा के पैटर्न सीख सकता है।
+यह छोटा मॉडल प्रयोग के लिए है और इसके उत्तर गलत या दोहराव वाले हो सकते हैं।
+Training notes:
+Use text you created yourself, public-domain material, or material whose license permits this use.
+Keep examples in all three languages. Include complete sentences, questions, answers, stories, and explanations.
+Do not put private information, passwords, or personal records in the dataset.
